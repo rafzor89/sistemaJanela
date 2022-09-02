@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada com JQuery</title>
+
+    <!-- Adicionando JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+        function calcular() {
+            const tab = $("#tabuada").val(); //Para pegar o valor digitado no formulário e colocar numa constante de nome tab.
+            $("#tabuadaSelecionada").text("Tabuada: " + tab); //Isso é a saída da função.
+
+            let result = "";
+            for (let index = 1; index < 11; index++) {
+                result += `<div>${tab} x ${index} = ${tab * index}</div>`;
+            }
+
+            $("#tabuadaResultado").text("");
+            $(result).appendTo("#tabuadaResultado");
+
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <label>
+            Tabuada
+            <input id="tabuada" type="text" placeholder="Digite o número da tabuada">
+        </label>
+        <button onclick="calcular()">Calcular</button>
+    </div>
+    <div id="containerTabuada">
+        <span id="tabuadaSelecionada"></span>
+        <span id="tabuadaResultado"></span>
+    </div>
+</body>
+
+</html>

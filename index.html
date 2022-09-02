@@ -6,22 +6,26 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link href="css/sistemaJanela.css" rel="stylesheet" type="text/css"/>
         <script src="js/sistemaJanela.js" type="text/javascript"></script>
+        <script src="js/ajaxViaCEP.js" type="text/javascript"></script>
     </head>
 
     <body>
         <main>
             <div id="menu-ativo">
 
-                <span class="itens-menu-ativo um">Tabuada</span>
-                <span class="itens-menu-ativo">IMC</span>
-                <span class="itens-menu-ativo">Calculadora</span>
+                <span class="itens-menu-ativo tabuada" onclick="abrirJanela(this)">Tabuada</span>
+                <span class="itens-menu-ativo imc" onclick="abrirJanela(this)">IMC</span>
+                <span class="itens-menu-ativo calculadora" onclick="abrirJanela(this)">Calculadora</span>
+                <span class="itens-menu-ativo ajax" onclick="abrirJanela(this)">Ajax - Via CEP</span>
 
             </div>
             <div id="janela">
                 <div id="janela-titulo">
                     <span id="icone"></span>
                     <span id="title"></span>
-                    <span id="botoes-controle"></span>
+                    <span id="botoes-controle">
+                        <span id="fechar" onclick="esconderElemento(('#janela'))">X</span>
+                    </span>
                 </div>
                 <div id="janela-menu"></div>
                 <div id="janela-conteudo"></div>
@@ -41,6 +45,9 @@
 
     <script>
         $("#menu-ativo").hide();
+        $("#janela").hide();
+        //$(".itens-menu-ativo.tabuada").on("click","#result", esconderElemento);
+        $("#janela").on("click", "#enviar_cep",submitCep);
         setInterval(function(){
             $("#relogio").text((new Date).toLocaleString().substr(11,9));
         }, 1000)

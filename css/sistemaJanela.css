@@ -43,7 +43,7 @@ footer{
     border-top-right-radius: 15px;
     opacity: 0.8;
 }
-#menu-ativo .itens-menu-ativo.um{
+#menu-ativo .itens-menu-ativo.tabuada{
     margin-top: 15px;
 }
 #menu-ativo .itens-menu-ativo{
@@ -76,4 +76,10 @@ footer{
     height: 30px;
     border-bottom: 1px solid #555;
     
+}
+#botoes-controle #fechar{
+    cursor: pointer;
+}
+#botoes-controle #fecha:hover{
+    font-weight: bold;
 }
