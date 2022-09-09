@@ -85,6 +85,6 @@ footer{
 }
 
 /*ajax cep*/
-input#cep{
+option, input{
     color: black;
 }
