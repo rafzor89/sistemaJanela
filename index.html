@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Sistema Janela</title>
+        
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link href="css/sistemaJanela.css" rel="stylesheet" type="text/css"/>
         <script src="js/sistemaJanela.js" type="text/javascript"></script>
@@ -21,7 +22,7 @@
                 <span class="itens-menu-ativo ibge" onclick="abrirJanela(this)">Ajax - IBGE</span>
 
             </div>
-            <div id="janela" class="template">
+            <div id="janela">
                 <div id="janela-titulo">
                     <span id="icone"></span>
                     <span id="title"></span>
@@ -30,7 +31,9 @@
                     </span>
                 </div>
                 <div id="janela-menu"></div>
-                <div id="janela-conteudo"></div>
+                <div id="janela-conteudo">
+                    <div class="dados template"></div>
+                </div>
                 <div id="janela-status"></div>
             </div>
         </main>
